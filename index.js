@@ -1,14 +1,9 @@
-// make function By using $ sign
-const $ = (selecetedId) => {
-    return document.getElementById(selecetedId);
-};
-
-const mealList = $('foodIteam');
-const detailsShow = $('showDetails');
+const mealList = document.getElementById('foodIteam');
+const detailsShow = document.getElementById('showDetail');
 
 // searchFood Iteam
 const foodIteam = () => {
-    const searchInput = $('searchIteam').value.trim();
+    const searchInput = document.getElementById('searchIteam').value.trim();
 
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
         .then((response) => response.json())
