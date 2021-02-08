@@ -3,10 +3,10 @@ const detailsShow = document.getElementById('showDetail');
 
 // searchFood Iteam
 const foodIteam = () => {
-    const searchInput = document.getElementById('searchIteam').value.trim();
+    const searchInput = document.getElementById('searchIteam').value;
 
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
-        .then((response) => response.json())
+        .then((res) => res.json())
         .then((data) => {
             const foods = data.meals;
             let htmlTemplate = '';
@@ -38,7 +38,7 @@ const foodIteam = () => {
 
 const foodDetails = (detailById) => {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${detailById}`)
-        .then((response) => response.json())
+        .then((res) => res.json())
         .then((data) => {
             const details = data.meals;
 
